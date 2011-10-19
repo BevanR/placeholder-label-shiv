@@ -22,12 +22,13 @@ jQuery.fn.placeholderLabelShiv = function() {
     $label.css({
       'width': $element.width(),
       'left': ot.left - op.left,
-      'top': ot.top - op.top + ($element.outerHeight() - $element.height()) / 2,
-      'text-align': $element.css('text-align'),
-      'font-family': $element.css('font-family'),
-      // IE7-8 barf on this.  Maybe because of http://bugs.jquery.com/ticket/6783?
-      // 'font-size': $element.css('font-size'),
-      'font-weight': $element.css('font-weight') // No trailing comma.
+      'top': ot.top - op.top + ($element.outerHeight() - $element.height()) / 2
+    });
+
+    // IE7-8 does not handle 'font-size' well.  Maybe because of
+    // http://bugs.jquery.com/ticket/6783?
+    jQuery.each(['text-align', 'font-family', 'font-weight', 'line-height', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left'], function(i, property) {
+      $label.css(property, $element.css(property));
     });
 
     /*

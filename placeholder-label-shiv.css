@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Styles for the placeholder label shiv.
+ *
+ * @author Bevan Rudge
+ * @see https://github.com/bevanr/placeholder-label-shiv
+ */
+
+label.placeholder-shiv {
+  position: absolute;
+  color: #888;
+}
