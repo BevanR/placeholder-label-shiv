@@ -27,8 +27,9 @@ jQuery.fn.placeholderLabelShiv = function() {
 
     // IE7-8 does not handle 'font-size' well.  Maybe because of
     // http://bugs.jquery.com/ticket/6783?
+    // Firefox does not handle 'line-height' correctly.
     // @todo Make this list configurable?
-    jQuery.each(['text-align', 'font-family', 'font-weight', 'line-height', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left'], function(i, property) {
+    jQuery.each(['text-align', 'font-family', 'font-weight', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left'], function(i, property) {
       $label.css(property, $element.css(property));
     });
 
